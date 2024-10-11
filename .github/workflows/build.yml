@@ -64,7 +64,7 @@ jobs:
         run: |
           pwd
           ls -l ./nuget-packages
-          dotnet nuget push ./nuget-packages/*.nupkg --api-key ${GITHUB_TOKEN} --source ${GITHUB_FEED} --skip-duplicate
+          dotnet nuget push ./nuget-packages/*.nupkg --api-key ${{ secrets.NUGET_REPO_PASSWORD }} --source ${GITHUB_FEED} --skip-duplicate
 
       - name: Cleanup
         if: always()
