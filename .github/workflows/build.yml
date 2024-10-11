@@ -44,7 +44,7 @@ jobs:
 
       - name: Set version variables
         run: |
-          VER=$(cat ./Clients/Version.txt)
+          VER=$(cat ./Clients/Version.txt | awk '{ print $1 }')
           echo "VERSION=$VER" >> $GITHUB_ENV
 
       - name: Show version
